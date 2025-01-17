@@ -1,0 +1,22 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-ingress
+spec:
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: "nginx-ingress"
+  project: default
+  sources:
+
+    - repoURL: "https://kubernetes.github.io/ingress-nginx"
+      chart: "ingress-nginx"
+      targetRevision: 4.14.0
+      helm:
+        valueFiles:
+          - $values/values.yaml
+      
+    - repoURL: 'https://github.com/nflenz/nginx-ingress'
+      targetRevision: main
+      ref: values
