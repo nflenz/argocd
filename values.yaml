@@ -167,7 +167,7 @@ configs:
   ## Ref: https://github.com/argoproj/argo-cd/blob/master/docs/operator-manual/argocd-cm.yaml
   cm:
     # -- Create the argocd-cm configmap for [declarative setup]
-    create: false
+    create: true
 
     # -- Annotations to be added to argocd-cm configmap
     annotations: {}
