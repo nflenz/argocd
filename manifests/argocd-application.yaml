@@ -21,5 +21,6 @@ spec:
       targetRevision: main
       ref: values
 
-    - repoURL: 'https://github.com/nflenz/argocd/manifests'
+    - repoURL: 'https://github.com/nflenz/argocd/'
+      path: 'manifests'
       targetRevision: main
