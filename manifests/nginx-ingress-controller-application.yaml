@@ -7,6 +7,13 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: "nginx-ingress"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+      - PruneLast=true
   project: default
   sources:
 
